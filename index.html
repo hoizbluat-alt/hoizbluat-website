@@ -527,7 +527,69 @@
   }
 
 }
-    
+  /* =========================
+   HANDY & TABLET MENÜ
+========================= */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #eee8df;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+
+/* =========================
+   HANDY & TABLET
+========================= */
+
+@media screen and (max-width: 800px) {
+
+  nav {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 220px;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(20,17,14,0.98);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+  }
+
+  .nav-links a:hover {
+    background: rgba(255,255,255,0.05);
+  }
+
+}  
   </style>
 </head>
 
@@ -933,7 +995,20 @@
     </div>
 
   </footer>
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
 
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
