@@ -7,93 +7,7 @@
   <title>Hoizbluat – Holz. Handwerk. Charakter.</title>
   <meta name="description" content="Hoizbluat – handgeschnitzte Krampusmasken, Skulpturen, Tiere und einzigartige Holzarbeiten.">
 
- ```css
-/* =========================
-   ARBEITEN GALERIE
-========================= */
-
-.gallery-section {
-  margin-top: 60px;
-}
-
-.gallery-heading {
-  margin-bottom: 25px;
-}
-
-.gallery-heading h3 {
-  font-size: 2.2rem;
-  margin-bottom: 5px;
-}
-
-.gallery-heading p {
-  color: #aaa198;
-  font-size: 0.95rem;
-}
-
-.work-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.gallery-item {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: #27221d;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05);
-}
-
-.animals-section {
-  margin-top: 100px;
-}
-
-
-/* =========================
-   TABLET
-========================= */
-
-@media (max-width: 800px) {
-
-  .work-gallery {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-}
-
-
-/* =========================
-   HANDY
-========================= */
-
-@media (max-width: 500px) {
-
-  .work-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-heading h3 {
-    font-size: 1.8rem;
-  }
-
-}
-```
-
   <style>
-    /* =========================
-       GRUNDLAGEN
-    ========================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -127,7 +41,6 @@
       margin: 0 auto;
     }
 
-
     /* =========================
        NAVIGATION
     ========================= */
@@ -138,10 +51,8 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-
       background: rgba(20, 17, 14, 0.92);
       backdrop-filter: blur(10px);
-
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -157,11 +68,6 @@
       font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: 3px;
-    }
-
-    .logo span {
-      font-weight: 400;
-      opacity: 0.6;
     }
 
     .nav-links {
@@ -182,7 +88,6 @@
       opacity: 1;
     }
 
-
     /* =========================
        HERO
     ========================= */
@@ -194,14 +99,14 @@
       position: relative;
 
       background:
-  linear-gradient(
-    to top,
-    rgba(15,12,10,0.95) 0%,
-    rgba(15,12,10,0.35) 55%,
-    rgba(15,12,10,0.15) 100%
-  ),
-  url("./werkstatt.jpg.jpg")
-  center / cover no-repeat;
+        linear-gradient(
+          to top,
+          rgba(15,12,10,0.95) 0%,
+          rgba(15,12,10,0.35) 55%,
+          rgba(15,12,10,0.15) 100%
+        ),
+        url("./werkstatt.jpg.jpg")
+        center / cover no-repeat;
     }
 
     .hero-content {
@@ -255,7 +160,6 @@
       color: #171411;
     }
 
-
     /* =========================
        SECTIONS
     ========================= */
@@ -288,61 +192,54 @@
       margin-top: 20px;
     }
 
-
     /* =========================
-       ARBEITEN
+       ARBEITEN GALERIE
     ========================= */
 
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+    .gallery-section {
+      margin-top: 60px;
     }
 
-    .work-card {
-      position: relative;
-      min-height: 500px;
+    .gallery-heading {
+      margin-bottom: 25px;
+    }
+
+    .gallery-heading h3 {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+
+    .gallery-heading p {
+      color: #aaa198;
+      font-size: 0.95rem;
+    }
+
+    .work-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      aspect-ratio: 4 / 5;
       overflow: hidden;
       background: #27221d;
     }
 
-    .work-card.large {
-      grid-row: span 2;
-      min-height: 800px;
-    }
-
-    .work-card img {
+    .gallery-item img {
+      width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.7s ease;
+      transition: transform 0.5s ease;
     }
 
-    .work-card:hover img {
-      transform: scale(1.04);
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
 
-    .work-info {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 35px;
-
-      background: linear-gradient(
-        transparent,
-        rgba(0,0,0,0.85)
-      );
+    .animals-section {
+      margin-top: 100px;
     }
-
-    .work-info h3 {
-      font-size: 2rem;
-      margin-bottom: 5px;
-    }
-
-    .work-info p {
-      opacity: 0.7;
-    }
-
 
     /* =========================
        ÜBER MICH
@@ -371,7 +268,6 @@
       margin-bottom: 20px;
       font-size: 1.05rem;
     }
-
 
     /* =========================
        WORKSHOP
@@ -409,7 +305,6 @@
       font-size: 0.95rem;
     }
 
-
     /* =========================
        KONTAKT
     ========================= */
@@ -438,7 +333,6 @@
       gap: 20px;
     }
 
-
     /* =========================
        FOOTER
     ========================= */
@@ -455,7 +349,6 @@
       justify-content: space-between;
       gap: 20px;
     }
-
 
     /* =========================
        MOBILE
@@ -492,14 +385,9 @@
         padding: 80px 0;
       }
 
-      .works-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .work-card,
-      .work-card.large {
-        min-height: 500px;
-        grid-row: auto;
+      .work-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
       }
 
       .about-grid {
@@ -524,9 +412,20 @@
         flex-direction: column;
       }
     }
+
+    @media (max-width: 500px) {
+
+      .work-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-heading h3 {
+        font-size: 1.8rem;
+      }
+    }
+
   </style>
 </head>
-
 
 <body>
 
@@ -596,135 +495,104 @@
          ARBEITEN
     ========================= -->
 
-  ```html
-<section id="arbeiten">
+    <section id="arbeiten">
 
-  <div class="container">
+      <div class="container">
 
-    <div class="section-title">
-      <div class="section-number">01 — MEINE ARBEITEN</div>
+        <div class="section-title">
+          <div class="section-number">01 — MEINE ARBEITEN</div>
 
-      <h2>
-        Holz bekommt<br>
-        Charakter.
-      </h2>
+          <h2>
+            Holz bekommt<br>
+            Charakter.
+          </h2>
 
-      <p class="intro">
-        Vom wilden Krampus bis zur detailreichen Tierfigur:
-        Ich arbeite mit Holz, Werkzeug und viel Geduld
-        und lasse aus jedem Stück etwas Eigenes entstehen.
-      </p>
-    </div>
+          <p class="intro">
+            Vom wilden Krampus bis zur detailreichen Tierfigur:
+            Ich arbeite mit Holz, Werkzeug und viel Geduld
+            und lasse aus jedem Stück etwas Eigenes entstehen.
+          </p>
+        </div>
 
 
-    <!-- KRAMPUSMASKEN -->
+        <!-- KRAMPUSMASKEN -->
 
-    <div class="gallery-section">
+        <div class="gallery-section">
 
-      <div class="gallery-heading">
-        <h3>Krampusmasken</h3>
-        <p>Handgeschnitzte Einzelstücke</p>
+          <div class="gallery-heading">
+            <h3>Krampusmasken</h3>
+            <p>Handgeschnitzte Einzelstücke</p>
+          </div>
+
+          <div class="work-gallery">
+
+            <div class="gallery-item">
+              <img src="./Krampus-01.jpeg" alt="Krampusmaske 01">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./Krampus-02.jpeg" alt="Krampusmaske 02">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./Krampus-03.jpeg" alt="Krampusmaske 03">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./Krampus-04.jpeg" alt="Krampusmaske 04">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./Krampus-05.jpeg" alt="Krampusmaske 05">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./Krampus-06.jpeg" alt="Krampusmaske 06">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./Krampus-07.jpeg" alt="Krampusmaske 07">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./Krampus-08.jpeg" alt="Krampusmaske 08">
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- TIERE -->
+
+        <div class="gallery-section animals-section">
+
+          <div class="gallery-heading">
+            <h3>Tiere</h3>
+            <p>Von der Natur inspiriert</p>
+          </div>
+
+          <div class="work-gallery">
+
+            <div class="gallery-item">
+              <img src="./tier-01.jpeg" alt="Tier aus Holz 01">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./tier-02.jpeg" alt="Tier aus Holz 02">
+            </div>
+
+            <div class="gallery-item">
+              <img src="./tier-03.jpeg" alt="Tier aus Holz 03">
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
 
-      <div class="work-gallery">
-
-        <div class="gallery-item">
-          <img src="./Krampus-01.jpeg" alt="Krampusmaske 01">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./Krampus-02.jpeg" alt="Krampusmaske 02">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./Krampus-03.jpeg" alt="Krampusmaske 03">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./Krampus-04.jpeg" alt="Krampusmaske 04">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./Krampus-05.jpeg" alt="Krampusmaske 05">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./Krampus-06.jpeg" alt="Krampusmaske 06">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./Krampus-07.jpeg" alt="Krampusmaske 07">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./Krampus-08.jpeg" alt="Krampusmaske 08">
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- TIERE -->
-
-    <div class="gallery-section animals-section">
-
-      <div class="gallery-heading">
-        <h3>Tiere</h3>
-        <p>Von der Natur inspiriert</p>
-      </div>
-
-      <div class="work-gallery">
-
-        <div class="gallery-item">
-          <img src="./tier-01.jpeg" alt="Tier aus Holz 01">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./tier-02.jpeg" alt="Tier aus Holz 02">
-        </div>
-
-        <div class="gallery-item">
-          <img src="./tier-03.jpeg" alt="Tier aus Holz 03">
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-```
-
-
-
-    <!-- TIERE -->
-
-    <div class="gallery-title gallery-title-spaced">
-      <h3>Tiere</h3>
-      <p>Von der Natur inspiriert</p>
-    </div>
-
-    <div class="gallery">
-
-      <div class="gallery-item">
-        <img src="./tier-01.jpeg" alt="Tier aus Holz 01">
-      </div>
-
-      <div class="gallery-item">
-        <img src="./tier-02.jpeg" alt="Tier aus Holz 02">
-      </div>
-
-      <div class="gallery-item">
-        <img src="./tier-03.jpeg" alt="Tier aus Holz 03">
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
+    </section>
 
 
     <!-- =========================
