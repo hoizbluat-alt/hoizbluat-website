@@ -64,11 +64,16 @@
       gap: 30px;
     }
 
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      letter-spacing: 3px;
-    }
+   .logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 55px;
+  width: auto;
+  display: block;
+}
 
     .nav-links {
       display: flex;
@@ -615,8 +620,8 @@
     <nav>
 
       <a href="#start" class="logo">
-        HOIZBLUAT
-      </a>
+  <img src="./Logo.png" alt="Hoizbluat">
+</a>
 
       <button class="menu-toggle" aria-label="Menü öffnen">
         ☰
