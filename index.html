@@ -269,41 +269,116 @@
       font-size: 1.05rem;
     }
 
-    /* =========================
-       WORKSHOP
-    ========================= */
+  /* =========================
+   WORKSHOP
+========================= */
 
-    .process {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid rgba(255,255,255,0.15);
-    }
+.process {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
 
-    .process-item {
-      padding: 35px 25px;
-      border-right: 1px solid rgba(255,255,255,0.15);
-    }
+.process-item {
+  padding: 35px 25px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
 
-    .process-item:last-child {
-      border-right: none;
-    }
+.process-item:last-child {
+  border-right: none;
+}
 
-    .process-number {
-      font-size: 0.75rem;
-      letter-spacing: 2px;
-      opacity: 0.45;
-      margin-bottom: 40px;
-    }
+/* Kleines Bild pro Arbeitsschritt */
+.process-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: 25px;
+  overflow: hidden;
+  background: #27221d;
+}
 
-    .process-item h3 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-    }
+.process-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .process-item p {
-      color: #aaa198;
-      font-size: 0.95rem;
-    }
+.process-number {
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  opacity: 0.45;
+  margin-bottom: 20px;
+}
+
+.process-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.process-item p {
+  color: #aaa198;
+  font-size: 0.95rem;
+}
+
+
+/* =========================
+   TABLET & HANDY
+   WORKSHOP HORIZONTAL
+========================= */
+
+@media screen and (max-width: 800px) {
+
+  .process {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 15px !important;
+    border-top: none;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .process::-webkit-scrollbar {
+    display: none;
+  }
+
+  .process-item {
+    flex: 0 0 75% !important;
+    width: 75% !important;
+    min-width: 75% !important;
+    padding: 25px !important;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    scroll-snap-align: start;
+  }
+
+  .process-item:last-child {
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+
+}
+
+
+/* =========================
+   HANDY
+========================= */
+
+@media screen and (max-width: 500px) {
+
+  .process {
+    gap: 12px !important;
+  }
+
+  .process-item {
+    flex: 0 0 80% !important;
+    width: 80% !important;
+    min-width: 80% !important;
+  }
+
+}
 
     /* =========================
        KONTAKT
