@@ -1291,5 +1291,86 @@ section + section {
     window.scrollTo(0, 0);
   });
 </script>
+
+<!-- FOTO-GROSSANSICHT -->
+<div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Foto schließen">&times;</button>
+  <button class="lightbox-prev" id="lightbox-prev" aria-label="Vorheriges Foto">&#10094;</button>
+  <img id="lightbox-image" src="" alt="">
+  <button class="lightbox-next" id="lightbox-next" aria-label="Nächstes Foto">&#10095;</button>
+</div>
+
+<script>
+(() => {
+  const lightbox = document.getElementById("lightbox");
+  const largeImage = document.getElementById("lightbox-image");
+  const closeButton = document.getElementById("lightbox-close");
+  const prevButton = document.getElementById("lightbox-prev");
+  const nextButton = document.getElementById("lightbox-next");
+
+  let images = [];
+  let currentIndex = 0;
+  let touchStartX = 0;
+
+  function showImage(index) {
+    if (!images.length) return;
+    currentIndex = (index + images.length) % images.length;
+    const img = images[currentIndex];
+    largeImage.src = img.src;
+    largeImage.alt = img.alt || "Detailansicht einer Holzschnitzerei";
+  }
+
+  function openLightbox(clickedImage) {
+    const gallery = clickedImage.closest(".work-gallery");
+    if (!gallery) return;
+
+    images = Array.from(gallery.querySelectorAll(".gallery-item img"));
+    currentIndex = images.indexOf(clickedImage);
+    if (currentIndex < 0) return;
+
+    showImage(currentIndex);
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+    largeImage.src = "";
+  }
+
+  document.querySelectorAll(".work-gallery .gallery-item img").forEach(img => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", () => openLightbox(img));
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+  prevButton.addEventListener("click", () => showImage(currentIndex - 1));
+  nextButton.addEventListener("click", () => showImage(currentIndex + 1));
+
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", event => {
+    if (!lightbox.classList.contains("active")) return;
+    if (event.key === "Escape") closeLightbox();
+    if (event.key === "ArrowLeft") showImage(currentIndex - 1);
+    if (event.key === "ArrowRight") showImage(currentIndex + 1);
+  });
+
+  lightbox.addEventListener("touchstart", event => {
+    touchStartX = event.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightbox.addEventListener("touchend", event => {
+    const deltaX = event.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(deltaX) > 50) {
+      showImage(currentIndex + (deltaX < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+})();
+</script>
+          
 </body>
 </html>
