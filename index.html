@@ -911,7 +911,10 @@ section + section {
     font-size: 1.2rem;
   }
 }
-
+/* Nur Werkstattfoto 03 weniger zuschneiden */
+.process-item:nth-child(3) .process-image img {
+  object-fit: contain;
+}
   </style>
 </head>
 
