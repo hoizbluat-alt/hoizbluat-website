@@ -627,11 +627,17 @@ footer .container {
     order: 1;
   }
 
-  .about-image {
-    order: 2;
-    min-height: 220px;
-    height: 220px;
-  }
+ .about-image {
+  order: 2;
+  min-height: auto;
+  height: auto;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
 
   /* Werkstatt: horizontal wischbar */
